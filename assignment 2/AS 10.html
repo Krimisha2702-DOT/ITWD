@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog Boxes Example</title>
+    <script>
+        function showDialogBoxes() {
+            // 1. Alert dialog
+            alert("Welcome to the Dialog Box Example!");
+
+            // 2. Prompt dialog
+            const userName = prompt("Please enter your name:");
+
+            // Check if user input is valid
+            if (userName) {
+                // 3. Confirm dialog
+                const isConfirm = confirm(`Hello, ${userName}! Do you want to proceed?`);
+
+                if (isConfirm) {
+                    alert("You chose to proceed!");
+                } else {
+                    alert("You chose not to proceed.");
+                }
+            } else {
+                alert("No name entered.");
+            }
+        }
+
+        // Call the function when the window loads
+        window.onload = showDialogBoxes;
+    </script>
+</head>
+<body>
+    <h1>Dialog Boxes Example</h1>
+</body>
+</html>

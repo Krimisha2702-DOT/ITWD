@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers Divisible by 3</title>
+    <script>
+        function findDivisibleByThree() {
+            let number = 1; // Start from 1
+            let divisibleNumbers = '';
+
+            // Use a do...while loop to find numbers divisible by 3
+            do {
+                if (number % 3 === 0) {
+                    divisibleNumbers += number + '<br>'; // Append divisible number to the string
+                }
+                number++; // Increment the number
+            } while (number <= 50);
+
+            // Display the numbers
+            document.getElementById("divisibleNumbers").innerHTML = divisibleNumbers;
+        }
+
+        // Call the function when the window loads
+        window.onload = findDivisibleByThree;
+    </script>
+</head>
+<body>
+    <h1>Numbers Divisible by 3 Between 1 and 50</h1>
+    <div id="divisibleNumbers"></div>
+</body>
+</html>

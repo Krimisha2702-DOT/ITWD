@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Numbers</title>
+    <script>
+        function printEvenNumbers() {
+            let number = 1; // Start from 1
+            let evenNumbers = '';
+
+            // Use a while loop to find even numbers
+            while (number <= 25) {
+                if (number % 2 === 0) {
+                    evenNumbers += number + '<br>'; // Append even number to the string
+                }
+                number++; // Increment the number
+            }
+
+            // Display the even numbers
+            document.getElementById("evenNumbers").innerHTML = evenNumbers;
+        }
+
+        // Call the function when the window loads
+        window.onload = printEvenNumbers;
+    </script>
+</head>
+<body>
+    <h1>Even Numbers from 1 to 25</h1>
+    <div id="evenNumbers"></div>
+</body>
+</html>
