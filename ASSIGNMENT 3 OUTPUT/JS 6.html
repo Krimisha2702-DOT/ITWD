@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Textbox Color</title>
+    <style>
+        #colorInput {
+            padding: 10px;
+            width: 200px;
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Change Textbox Color</h1>
+    <input type="text" id="colorInput" placeholder="Enter a color name" oninput="changeColor()">
+    <p id="message"></p>
+
+    <script>
+        function changeColor() {
+            const colorInput = document.getElementById('colorInput');
+            const color = colorInput.value;
+
+            // Change the background color of the textbox
+            colorInput.style.backgroundColor = color;
+
+            // Validate the color input
+            const message = document.getElementById('message');
+            if (!isColorValid(color)) {
+                message.innerText = "Please enter a valid color name.";
+                message.style.color = 'red';
+            } else {
+                message.innerText = ""; // Clear the message if the color is valid
+            }
+        }
+
+        function isColorValid(color) {
+            const dummy = document.createElement('div');
+            dummy.style.color = color;
+            return dummy.style.color !== ''; // Check if the color is valid
+        }
+    </script>
+</body>
+</html>

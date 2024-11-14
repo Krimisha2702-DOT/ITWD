@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Case Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+        }
+        button {
+            margin-top: 10px;
+            margin-right: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Text Case Converter</h2>
+    <input type="text" id="userInput" placeholder="Enter text here">
+    <br>
+    <button id="upperButton">Uppercase</button>
+    <button id="lowerButton">Lowercase</button>
+    <br><br>
+    <input type="text" id="result" placeholder="Result" readonly>
+
+    <script>
+        document.getElementById('upperButton').addEventListener('click', function() {
+            const inputText = document.getElementById('userInput').value;
+            const upperText = inputText.toUpperCase();
+            document.getElementById('result').value = upperText;
+        });
+
+        document.getElementById('lowerButton').addEventListener('click', function() {
+            const inputText = document.getElementById('userInput').value;
+            const lowerText = inputText.toLowerCase();
+            document.getElementById('result').value = lowerText;
+        });
+    </script>
+
+</body>
+</html>

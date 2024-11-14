@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square and Cube Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            margin: 5px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Square and Cube Calculator</h2>
+<label for="numberInput">Enter a number:</label>
+<input type="text" id="numberInput" placeholder="Enter a number">
+
+<div>
+    <input type="radio" id="square" name="operation" value="square" onclick="calculate()">
+    <label for="square">Square</label>
+    <input type="radio" id="cube" name="operation" value="cube" onclick="calculate()">
+    <label for="cube">Cube</label>
+</div>
+
+<label for="resultInput">Result:</label>
+<input type="text" id="resultInput" placeholder="Result" readonly>
+
+<script>
+    function calculate() {
+        const number = parseFloat(document.getElementById('numberInput').value);
+        let result;
+
+        if (document.getElementById('square').checked) {
+            result = number * number; // Calculate square
+        } else if (document.getElementById('cube').checked) {
+            result = number * number * number; // Calculate cube
+        }
+
+        // Display result in the result input box
+        document.getElementById('resultInput').value = result || '';
+    }
+</script>
+
+</body>
+</html>

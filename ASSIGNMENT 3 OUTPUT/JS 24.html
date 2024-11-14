@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Sequence</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Print Numbers in the Format N^N = Result</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number N" min="1">
+    <button id="generateButton">Generate Sequence</button>
+    <div class="result" id="result"></div>
+
+    <script>
+        document.getElementById('generateButton').addEventListener('click', function() {
+            const N = parseInt(document.getElementById('numberInput').value);
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = ''; // Clear previous results
+
+            if (isNaN(N) || N < 1) {
+                resultDiv.innerText = 'Please enter a valid number greater than 0.';
+                return;
+            }
+
+            // Generate and display the sequence
+            for (let i = 1; i <= N; i++) {
+                const square = i * i;
+                resultDiv.innerHTML += `${i}^2=${square}<br>`;
+            }
+        });
+    </script>
+
+</body>
+</html>

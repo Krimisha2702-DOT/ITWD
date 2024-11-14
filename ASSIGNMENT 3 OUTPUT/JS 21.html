@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome and Goodbye Messages</title>
+    <script>
+        // Display welcome message when the page loads
+        window.onload = function() {
+            alert("Welcome to the page!");
+        };
+
+        // Display goodbye message when the page is unloaded or closed
+        window.onbeforeunload = function() {
+            return "Goodbye! Thanks for visiting.";
+        };
+    </script>
+</head>
+<body>
+
+    <h2>Welcome to My Website</h2>
+    <p>Feel free to explore!</p>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Max and Min Number Finder</title>
+</head>
+<body>
+    <h1>Max and Min Number Finder</h1>
+    <input type="text" id="numbers" placeholder="Enter numbers separated by commas">
+    <button onclick="findMaxMin()">Find Max and Min</button>
+    <p id="result"></p>
+
+    <script>
+        function findMaxMin() {
+            const input = document.getElementById('numbers').value;
+            const numberArray = input.split(',').map(num => parseFloat(num.trim()));
+            let resultText = "";
+
+            // Check if the array is valid
+            if (numberArray.length === 0 || numberArray.some(isNaN)) {
+                resultText = "Please enter valid numbers.";
+            } else {
+                const maxNumber = Math.max(...numberArray);
+                const minNumber = Math.min(...numberArray);
+                resultText = `Maximum number: ${maxNumber}, Minimum number: ${minNumber}`;
+            }
+
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>

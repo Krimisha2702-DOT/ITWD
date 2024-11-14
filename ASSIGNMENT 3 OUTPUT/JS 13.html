@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Date in Status Bar</title>
+    <script>
+        function displayDateInStatusBar() {
+            const today = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const dateString = today.toLocaleDateString(undefined, options);
+            window.status = `Today's date: ${dateString}`;
+        }
+
+        window.onload = displayDateInStatusBar;
+    </script>
+</head>
+<body>
+    <h1>Check the Status Bar for Today's Date</h1>
+    <p>Hover over this page to see the date in the status bar (if supported by your browser).</p>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Occurrence Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Count Character Occurrences</h2>
+    <input type="text" id="inputString" placeholder="Enter your string">
+    <br>
+    <input type="text" id="charToCount" placeholder="Enter character to count" maxlength="1">
+    <br>
+    <button id="countButton">Count Occurrences</button>
+    <br><br>
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('countButton').addEventListener('click', function() {
+            const inputString = document.getElementById('inputString').value;
+            const charToCount = document.getElementById('charToCount').value;
+
+            // Validate input
+            if (charToCount.length !== 1) {
+                document.getElementById('result').innerText = 'Please enter a single character.';
+                return;
+            }
+
+            // Count occurrences
+            let count = 0;
+            for (let char of inputString) {
+                if (char === charToCount) {
+                    count++;
+                }
+            }
+
+            // Display result
+            document.getElementById('result').innerText = `The character '${charToCount}' occurs ${count} time(s) in the string.`;
+        });
+    </script>
+
+</body>
+</html>

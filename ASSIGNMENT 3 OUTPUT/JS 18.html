@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square and Square Root</title>
+</head>
+<body>
+
+    <script>
+        // Prompt the user for a number
+        const userInput = prompt("Please enter a number:");
+
+        // Convert the input to a number
+        const number = parseFloat(userInput);
+
+        // Validate the input
+        if (isNaN(number)) {
+            alert("Please enter a valid number.");
+        } else {
+            // Calculate square and square root
+            const square = number * number;
+            const squareRoot = Math.sqrt(number);
+
+            // Display the results
+            document.write(`<h2>Results:</h2>`);
+            document.write(`<p>Square of ${number} is: ${square}</p>`);
+            document.write(`<p>Square root of ${number} is: ${squareRoot}</p>`);
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse and Palindrome Checker</title>
+</head>
+<body>
+    <h1>Reverse Number, Reverse String, and Palindrome Checker</h1>
+
+    <h2>Reverse Number</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="reverseNumber()">Reverse Number</button>
+    <p id="reverseNumberResult"></p>
+
+    <h2>Reverse String</h2>
+    <input type="text" id="stringInput" placeholder="Enter a string">
+    <button onclick="reverseString()">Reverse String</button>
+    <p id="reverseStringResult"></p>
+
+    <h2>Palindrome Checker</h2>
+    <input type="number" id="palindromeInput" placeholder="Enter a number">
+    <button onclick="checkPalindrome()">Check Palindrome</button>
+    <p id="palindromeResult"></p>
+
+    <script>
+        function reverseNumber() {
+            const num = document.getElementById('numberInput').value;
+            const reversed = num.split('').reverse().join('');
+            document.getElementById('reverseNumberResult').innerText = `Reversed Number: ${reversed}`;
+        }
+
+        function reverseString() {
+            const str = document.getElementById('stringInput').value;
+            const reversed = str.split('').reverse().join('');
+            document.getElementById('reverseStringResult').innerText = `Reversed String: ${reversed}`;
+        }
+
+        function checkPalindrome() {
+            const num = document.getElementById('palindromeInput').value;
+            const reversed = num.split('').reverse().join('');
+            const isPalindrome = num === reversed;
+            document.getElementById('palindromeResult').innerText = isPalindrome 
+                ? `${num} is a palindrome.` 
+                : `${num} is not a palindrome.`;
+        }
+    </script>
+</body>
+</html>

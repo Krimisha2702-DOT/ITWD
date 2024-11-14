@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #feedback {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enter Student Number</h1>
+    <input type="number" id="studentNumber" placeholder="Enter student number" min="0">
+    <button onclick="giveFeedback()">Submit</button>
+    
+    <p id="feedback"></p>
+
+    <script>
+        function giveFeedback() {
+            const number = parseInt(document.getElementById('studentNumber').value);
+            const feedback = document.getElementById('feedback');
+
+            if (isNaN(number)) {
+                feedback.innerText = "Please enter a valid number.";
+                feedback.style.color = 'red';
+                return;
+            }
+
+            if (number >= 75) {
+                feedback.innerText = "GOOD";
+                feedback.style.color = 'green';
+            } else if (number >= 50) {
+                feedback.innerText = "TRY BEST IN NEXT EXAM";
+                feedback.style.color = 'orange';
+            } else {
+                feedback.innerText = "NEED TO IMPROVE";
+                feedback.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
